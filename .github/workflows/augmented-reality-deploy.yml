@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - master
-    paths:
-      - "augmented-reality/public/**"
+    # paths:
+    #   - "augmented-reality/public/**"
 
 jobs:
   build-and-deploy:
