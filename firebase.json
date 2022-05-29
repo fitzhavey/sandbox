@@ -1,6 +1,8 @@
 {
-  "hosting": [{
-    "target": "augmented-reality",
-    "public": "/augmented reality/public"
-  }]
+  "hosting": [
+    {
+      "target": "augmented-reality",
+      "public": "/augmented reality/public"
+    }
+  ]
 }
