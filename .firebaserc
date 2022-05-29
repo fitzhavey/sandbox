@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "sandbox-michaelfitzhavey"
+  },
+  "targets": {
+    "sandbox-michaelfitzhavey": {
+      "hosting": {
+        "augmented-reality": [
+          "augmented-reality"
+        ]
+      }
+    }
   }
 }
