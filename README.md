@@ -3,6 +3,11 @@
 This is a sandbox to test out technologies and see how they can be applied
 
 ## Sandboxes
-- [natural-language-processing](sandboxes/natural-language-processing): _Machine learning, Python_
-- [nuxt](sandboxes/nuxt): _JS Vue focused framework._
-- [terraform](sandboxes/terraform): _Infrastructure, AWS / Google Cloud / etc._
+- [augmented reality](/augmented-reality): _AR.js_
+- [natural language processing](/natural-language-processing): _Machine learning, Python_
+- [terraform](/terraform): _Infrastructure, AWS / Google Cloud / etc._
+
+## Hosting
+Hosting for this project is configured through Firebase, in the project `michaelfitzhavey-sandbox`. Configuration files for this are in the root directory.
+
+## Continuous Integration
