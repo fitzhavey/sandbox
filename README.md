@@ -11,3 +11,4 @@ This is a sandbox to test out technologies and see how they can be applied
 Hosting for this project is configured through Firebase, in the project `michaelfitzhavey-sandbox`. Configuration files for this are in the root directory.
 
 ## Continuous Integration
+This project deploys components for some of the technologies used in this sandbox. CI workflows for this can be found in the `./github/workflows` directory.
