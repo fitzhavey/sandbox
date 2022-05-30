@@ -14,11 +14,10 @@ AFRAME.registerComponent('shoot-airplane', {
 		airplane.setAttribute('gltf-model', '#airplaneModel')
 
 		// Choose a random rotation offset for some variation
-		const randomRotation = {x: -90 + Math.random() * 30, y: Math.random() * 360, z: 0}
-		airplane.setAttribute('rotation', randomRotation)
+		// const randos
 
 		// Set velocity, rotated with camera direction
-		const velocity = new THREE.Vector3(0, 0, -30)
+		const velocity = new THREE.Vector3(0, 0, -100)
 		velocity.applyQuaternion(camera.object3D.quaternion)
 		airplane.setAttribute('velocity', velocity)
 
