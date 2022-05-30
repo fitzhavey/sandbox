@@ -1,6 +1,5 @@
 # Sandbox
-
-This is a sandbox to test out technologies and see how they can be applied
+This is a sandbox to test out technologies and see how they can be applied.
 
 ## Sandboxes
 - [augmented reality](/augmented-reality): _AR.js_
