@@ -18,7 +18,7 @@ AFRAME.registerComponent('shoot-airplane', {
 		airplane.setAttribute('rotation', randomRotation)
 
 		// Set velocity, rotated with camera direction
-		const velocity = new THREE.Vector3(0, 0, -10)
+		const velocity = new THREE.Vector3(0, 0, -30)
 		velocity.applyQuaternion(camera.object3D.quaternion)
 		airplane.setAttribute('velocity', velocity)
 
