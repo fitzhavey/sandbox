@@ -1,188 +1,77 @@
-<div class="container">
-  <div class="paper">
-    <h1>Some of the things I've built to demo the current state of web AR tech.</h1>
-    <p>See <a href="https://github.com/michaelfitzhavey/sandbox/tree/master/augmented-reality">https://github.com/michaelfitzhavey/sandbox/tree/master/augmented-reality</a></p>
-  </div>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AR Sandbox</title>
+    <meta name="description" content="augmented reality sandbox" />
+    <meta name="keywords" content="augmented reality sandbox 8thwall" />
 
-  <ul class="numbers" role="list">
+    <style>
+      *,
+      a {
+        color: white;
+        background-color: #7eb4e2;
+      }
 
-    <li class="number" role="listitem">
-      <div class="link-wrapper">
-        <i class="fab fa-twitter" aria-hidden="true"></i>
-        <a href="https://twitter.com/s_aitchison" aria-label="Twitter profile">@s_aitchison</a>
-      </div>
-    </li>
+      ol {
+        line-height: 2;
+      }
 
-    <li class="number" role="listitem">
-      <div class="link-wrapper">
-        <a href="/v0">
-          <span>v0</span>
-          Test of mind-ar-js
-        </a>
-      </div>
-    </li>
+      ol li {
+        list-style-type: none;
+        counter-increment: item;
+      }
 
-    <li class="number" role="listitem">
-      <div class="link-wrapper">
-        <a href="/v1">
-          <span>v1</span>
-          Sample 8th wall project
-        </a>
-      </div>
-    </li>
+      ol li:before {
+        content: counter(item);
+        display: inline-block;
+        width: 12px;
+        height: 20px;
+        font-family: "Indie Flower", cursive;
+        margin-right: 5px;
+        background-color: #f9dd94;
+        color: #7eb4e2;
+        font-weight: bold;
+        font-size: 140%;
+        padding: 0 8px 8px;
+        border-radius: 3px;
+        line-height: 1.3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h3>
+        Some of the things I've built to demo the current state of web AR tech.
+      </h3>
+      <p>
+        See
+        <a
+          href="https://github.com/michaelfitzhavey/sandbox/tree/master/augmented-reality"
+          >https://github.com/michaelfitzhavey/sandbox/tree/master/augmented-reality</a
+        >
+      </p>
 
-    <li class="number" role="listitem">
-      <div class="link-wrapper">
-        <a href="/v2">
-          <span>v1</span>
-          Customised 8th wall project
-        </a>
-      </div>
-    </li>
+      <ol class="timeline">
+        <li>
+          <span class="badge badge-primary badge-pill font-weight-normal">
+            <a href="/v1"
+              >v1: A demo of the open source framework hiukim/mind-ar-js</a
+            >
+          </span>
+        </li>
 
-  </ul>
-</div>
+        <li>
+          <span class="badge badge-primary badge-pill font-weight-normal">
+            <a href="/v2">v2: A simple demo copied from 8th wall</a>
+          </span>
+        </li>
 
-<style>
-  :root {
-  --gray: #808080;
-  --gray-medium: #c1bfbf;
-  --gray-light: #d3d3d3;
-  --paper-color: #eff8fe;
-}
-
-body {
-  background: #fec0ca;
-  padding-top: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: Courier New, sans-serif;
-}
-
-h1 {
-  font-size: 1.2rem;
-}
-
-.paper {
-  position: relative;
-  padding: 10px;
-  width: 12rem;
-  min-height: 120px;
-  background: linear-gradient(
-    135deg,
-    var(--paper-color),
-    85%,
-    var(--gray-light)
-  );
-  box-shadow: 1px 0 1px var(--gray);
-  text-align: center;
-}
-
-/* Tacks */
-.paper::before {
-  content: "";
-  position: absolute;
-  left: 5px;
-  top: 5px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--gray);
-}
-
-.paper::after {
-  content: "";
-  position: absolute;
-  right: 5px;
-  top: 5px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--gray);
-}
-
-.numbers {
-  display: flex;
-  min-height: 11rem;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.number {
-  position: relative;
-  width: 100%;
-  background: linear-gradient(
-    to right,
-    var(--paper-color),
-    80%,
-    var(--gray-light)
-  );
-  border-top: 1px dashed var(--gray);
-  box-shadow: 1px 1px 1px var(--gray);
-  transform-origin: center top;
-}
-
-.link-wrapper {
-  position: absolute;
-  display: flex;
-  top: 0;
-  transform: rotate(90deg);
-  transform-origin: top left;
-  font-size: 0.9rem;
-  margin-left: 1.7rem;
-  margin-top: 1rem;
-  align-items: center;
-}
-
-.link-wrapper i {
-  margin-right: 5px;
-  font-size: 1.1rem;
-}
-
-.link-wrapper a {
-  text-decoration-style: dashed;
-  font-family: sans-serif;
-}
-
-.number:nth-child(2) {
-  transform: skew(-5deg, 0deg);
-  background: var(--paper-color);
-}
-
-.number:nth-child(2)::after,
-.number:nth-child(4)::after {
-  content: "";
-  pointer-events: none;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    to bottom,
-    var(--gray-light),
-    5%,
-    rgba(211, 211, 211, 0)
-  );
-}
-
-.number:nth-child(1),
-.number:nth-child(3) {
-  background: linear-gradient(
-    to right,
-    var(--paper-color),
-    60%,
-    var(--gray-light)
-  );
-}
-
-.number:nth-child(4) {
-  transform: skew(-8deg, 0deg);
-  background: var(--paper-color);
-}
-
-.number:nth-child(5) {
-  transform: skew(-3deg, 0deg);
-}
-
-</style>
+        <li>
+          <span class="badge badge-primary badge-pill font-weight-normal">
+            <a href="/v3">v3: 8th wall, top gun style ✈️</a>
+          </span>
+        </li>
+      </ol>
+    </div>
+  </body>
+</html>
