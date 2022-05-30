@@ -1,6 +1,9 @@
 // Copyright (c) 2021 8th Wall, Inc.
 /* globals AFRAME */
 
+const OBJECT_SIZE = 0.1
+const THROW_SPEED = 100
+
 AFRAME.registerComponent('shoot-airplane', {
 	init() {
 	  const camera = document.getElementById('camera')
@@ -10,21 +13,21 @@ AFRAME.registerComponent('shoot-airplane', {
 		// Create element to be thrown, setting position, scale, and model
 		const airplane = document.createElement('a-entity')
 		airplane.setAttribute('position', camera.object3D.position)
-		airplane.setAttribute('scale', '0.35 0.35 0.35')
+		airplane.setAttribute('scale', `${OBJECT_SIZE} ${OBJECT_SIZE} ${OBJECT_SIZE}`)
 		airplane.setAttribute('gltf-model', '#airplaneModel')
 
 		// Choose a random rotation offset for some variation
 		// const randos
 
 		// Set velocity, rotated with camera direction
-		const velocity = new THREE.Vector3(0, 0, -100)
+		const velocity = new THREE.Vector3(0, 0, -THROW_SPEED)
 		velocity.applyQuaternion(camera.object3D.quaternion)
 		airplane.setAttribute('velocity', velocity)
 
 		// Add physics body
 		airplane.setAttribute('body', {
 		  type: 'dynamic',
-		  sphereRadius: 0.035,
+		  sphereRadius: OBJECT_SIZE / 2,
 		  shape: 'sphere',
 		})
 
