@@ -10,7 +10,7 @@ AFRAME.registerComponent('shoot-airplane', {
 		// Create element to be thrown, setting position, scale, and model
 		const airplane = document.createElement('a-entity')
 		airplane.setAttribute('position', camera.object3D.position)
-		airplane.setAttribute('scale', '0.1 0.1 0.1')
+		airplane.setAttribute('scale', '0.02 0.02 0.02')
 		airplane.setAttribute('gltf-model', '#airplaneModel')
 
 		// Choose a random rotation offset for some variation
