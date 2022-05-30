@@ -10,6 +10,8 @@ AFRAME.registerComponent('shoot-airplane', {
 	  const splatSnd = document.querySelector('#splat').components.sound
 
 	  this.el.sceneEl.addEventListener('touchstart', (event) => {
+		console.log(`Throwing object sized ${OBJECT_SIZE} with speed ${THROW_SPEED}`)
+
 		// Create element to be thrown, setting position, scale, and model
 		const airplane = document.createElement('a-entity')
 		airplane.setAttribute('position', camera.object3D.position)
