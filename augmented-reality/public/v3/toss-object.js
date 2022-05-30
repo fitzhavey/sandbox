@@ -1,42 +1,42 @@
 // Copyright (c) 2021 8th Wall, Inc.
 /* globals AFRAME */
 
-AFRAME.registerComponent('shoot-tomato', {
+AFRAME.registerComponent('shoot-airplane', {
 	init() {
 	  const camera = document.getElementById('camera')
 	  const splatSnd = document.querySelector('#splat').components.sound
 
 	  this.el.sceneEl.addEventListener('touchstart', (event) => {
 		// Create element to be thrown, setting position, scale, and model
-		const tomato = document.createElement('a-entity')
-		tomato.setAttribute('position', camera.object3D.position)
-		tomato.setAttribute('scale', '1 1 1')
-		tomato.setAttribute('gltf-model', '#tomatoModel')
+		const airplane = document.createElement('a-entity')
+		airplane.setAttribute('position', camera.object3D.position)
+		airplane.setAttribute('scale', '0.1 0.1 0.1')
+		airplane.setAttribute('gltf-model', '#airplaneModel')
 
 		// Choose a random rotation offset for some variation
 		const randomRotation = {x: -90 + Math.random() * 30, y: Math.random() * 360, z: 0}
-		tomato.setAttribute('rotation', randomRotation)
+		airplane.setAttribute('rotation', randomRotation)
 
 		// Set velocity, rotated with camera direction
 		const velocity = new THREE.Vector3(0, 0, -10)
 		velocity.applyQuaternion(camera.object3D.quaternion)
-		tomato.setAttribute('velocity', velocity)
+		airplane.setAttribute('velocity', velocity)
 
 		// Add physics body
-		tomato.setAttribute('body', {
+		airplane.setAttribute('body', {
 		  type: 'dynamic',
 		  sphereRadius: 0.35,
 		  shape: 'sphere',
 		})
 
-		tomato.setAttribute('shadow', {
+		airplane.setAttribute('shadow', {
 		  receive: false,
 		})
 
-		// Add tomato to scene
-		this.el.sceneEl.appendChild(tomato)
+		// Add airplane to scene
+		this.el.sceneEl.appendChild(airplane)
 
-		// The splat is created at the same time as the thrown tomato so
+		// The splat is created at the same time as the thrown airplane so
 		// there is time to load the model before it hits the ground
 		const splatBase = document.createElement('a-entity')
 		splatBase.setAttribute('visible', 'false')
@@ -44,14 +44,14 @@ AFRAME.registerComponent('shoot-tomato', {
 		// The splat consists of a model wrapped in an empty
 		// parent so we can apply the correct scaling animation
 		const splat = document.createElement('a-entity')
-		splat.setAttribute('gltf-model', '#tomatoModel')
+		splat.setAttribute('gltf-model', '#airplaneModel')
 		splat.setAttribute('scale', '1 1 1')
 		splatBase.appendChild(splat)
 
 		this.el.sceneEl.appendChild(splatBase)
 
 		let didCollide = false
-		tomato.addEventListener('collide', (e) => {
+		airplane.addEventListener('collide', (e) => {
 		  // Only want to do the splat once, and with the ground only
 		  if (didCollide || e.detail.body.el.id !== 'ground') {
 			return
@@ -63,17 +63,17 @@ AFRAME.registerComponent('shoot-tomato', {
 		  // Play splat sound
 		  splatSnd.playSound()
 
-		  // Copy positioning of thrown tomato to splat
-		  splatBase.object3D.position.copy(tomato.object3D.position)
-		  splat.object3D.rotation.copy(tomato.object3D.rotation)
+		  // Copy positioning of thrown airplane to splat
+		  splatBase.object3D.position.copy(airplane.object3D.position)
+		  splat.object3D.rotation.copy(airplane.object3D.rotation)
 
 		  splatBase.object3D.visible = true
 
-		  tomato.setAttribute('visible', 'false')
+		  airplane.setAttribute('visible', 'false')
 
-		  // We can't remove the thrown tomato until the physics step is over
+		  // We can't remove the thrown airplane until the physics step is over
 		  setTimeout(() => {
-			tomato.parentNode.removeChild(tomato)
+			airplane.parentNode.removeChild(airplane)
 		  }, 0)
 
 		  // Using animation component to show flattening
