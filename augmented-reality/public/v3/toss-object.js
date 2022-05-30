@@ -10,7 +10,7 @@ AFRAME.registerComponent('shoot-airplane', {
 	  const splatSnd = document.querySelector('#splat').components.sound
 
 	  this.el.sceneEl.addEventListener('touchstart', (event) => {
-		console.log(`Throwing object sized ${OBJECT_SIZE} with speed ${THROW_SPEED}`)
+		console.log(`Throwing object sized ${OBJECT_SIZE} with}`)
 
 		// Create element to be thrown, setting position, scale, and model
 		const airplane = document.createElement('a-entity')
@@ -19,7 +19,9 @@ AFRAME.registerComponent('shoot-airplane', {
 		airplane.setAttribute('gltf-model', '#airplaneModel')
 
 		// Choose a random rotation offset for some variation
-		// const randos
+		// const randomRotation = {x: -90 + Math.random() * 30, y: Math.random() * 360, z: 0}
+		// airplane.setAttribute('rotation', randomRotation)
+		airplane.setAttribute('rotation', '0 0 0')
 
 		// Set velocity, rotated with camera direction
 		const velocity = new THREE.Vector3(0, 0, -THROW_SPEED)
