@@ -10,7 +10,7 @@ AFRAME.registerComponent('shoot-airplane', {
 		// Create element to be thrown, setting position, scale, and model
 		const airplane = document.createElement('a-entity')
 		airplane.setAttribute('position', camera.object3D.position)
-		airplane.setAttribute('scale', '0.02 0.02 0.02')
+		airplane.setAttribute('scale', '0.35 0.35 0.035')
 		airplane.setAttribute('gltf-model', '#airplaneModel')
 
 		// Choose a random rotation offset for some variation
@@ -25,7 +25,7 @@ AFRAME.registerComponent('shoot-airplane', {
 		// Add physics body
 		airplane.setAttribute('body', {
 		  type: 'dynamic',
-		  sphereRadius: 0.35,
+		  sphereRadius: 0.035,
 		  shape: 'sphere',
 		})
 
