@@ -2,7 +2,7 @@
 This is a sandbox to test out technologies and see how they can be applied.
 
 ## Sandboxes
-- [augmented reality](/augmented-reality): _AR.js_
+- [augmented reality](/augmented-reality): _Mobile for now, hololens one day..._
 - [natural language processing](/natural-language-processing): _Machine learning, Python_
 - [terraform](/terraform): _Infrastructure, AWS / Google Cloud / etc._
 
