@@ -18,7 +18,7 @@
       src="//apps.8thwall.com/xrweb?appKey=zl9iYLs0UnM13G8kugSsXRboJtbC2OJOZWmGeV4dvmWAKMaq1kwdRIa4PTdy4WvWyR05BG"
     ></script>
 
-    <script src="toss-object.js"></script>
+    <script src="v3/toss-object.js"></script>
   </head>
   <body>
     <!-- We must add the shoot-airplane component to the scene so it has an effect, as well as the physics component -->
@@ -33,12 +33,15 @@
     >
       <!-- We can define assets here to be loaded when A-Frame initializes -->
       <a-assets>
-        <a-asset-item id="airplaneModel" src="NEOADB1.glb"></a-asset-item>
+        <a-asset-item
+          id="airplaneModel"
+          src="/assets/NEOADB1.glb"
+        ></a-asset-item>
         <a-asset-item
           preload="auto"
           class="a-sound"
           id="splatSrc"
-          src="splat.m4a"
+          src="/assets/splat.m4a"
           response-type="arraybuffer"
         ></a-asset-item>
       </a-assets>

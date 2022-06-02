@@ -24,7 +24,7 @@ const sceneVue = new Vue({
     <a-camera id="camera" position="0 3 3"></a-camera>
     <a-entity
       id="model"
-      gltf-model="/v4/sand-castle.glb"
+      gltf-model="/assets/onewheel.glb"
       class="cantap"
       xrextras-two-finger-rotate
       xrextras-pinch-scale
