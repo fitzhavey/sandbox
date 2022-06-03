@@ -22,7 +22,7 @@ const sceneVue = new Vue({
     <a-camera id="camera" position="0 3 3"></a-camera>
     <a-entity
       id="model"
-      gltf-model="/assets/steph-soul.glb"
+      gltf-model="steph-soul.glb"
       class="cantap"
       scale="${SCALE}"
       shadow="receive: false">
