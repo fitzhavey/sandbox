@@ -1,5 +1,5 @@
-const BOARD_SCALE = "0.1 0.1 0.1";
-console.log("BOARD_SCALE: ", BOARD_SCALE);
+const SCALE = "0.1 0.1 0.1";
+console.log("SCALE: ", SCALE);
 
 Vue.config.ignoredElements = [
   "a-scene",
@@ -22,9 +22,9 @@ const sceneVue = new Vue({
     <a-camera id="camera" position="0 3 3"></a-camera>
     <a-entity
       id="model"
-      gltf-model="/assets/sand-castle.glb"
+      gltf-model="/assets/steph-soul.glb"
       class="cantap"
-      scale="${BOARD_SCALE}"
+      scale="${SCALE}"
       shadow="receive: false">
     </a-entity>
     <a-box id="ground" scale="100 2 100" position="0 -1 0" material="shader: shadow" shadow></a-box>
